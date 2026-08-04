@@ -45,7 +45,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: '基于 VitePress 构建 · 主题色 淡粉 💗',
+      message: '基于 maoxinhe 构建 · 主题色 淡粉 💗',
       copyright: 'Copyright © 2026 maoxinhe'
     },
 
