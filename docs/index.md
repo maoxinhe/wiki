@@ -5,6 +5,9 @@ hero:
   name: maoxinhe
   text: 个人知识库
   tagline: 技术笔记 · 折腾记录 · Minecraft 服务端
+  image:
+    src: https://q.qlogo.cn/headimg_dl?dst_uin=1096550598&spec=640&img_type=jpg
+    alt: maoxinhe
   actions:
     - theme: brand
       text: 📖 进入文章
@@ -30,4 +33,3 @@ features:
     title: 想法随笔
     details: 关于技术、生活、产品的碎片化思考。
 ---
-
