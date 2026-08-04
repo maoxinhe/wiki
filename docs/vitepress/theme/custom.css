@@ -1,295 +1,277 @@
 /* ========================================
-   maoxinhe Wiki - 淡粉色主题 + 全套毛玻璃
+   maoxinhe Wiki — 淡粉色主题 + 全套毛玻璃
    ======================================== */
 
-/* ---------- 1. 基础变量（亮色模式）---------- */
+/* ---------- 品牌色变量 ---------- */
 :root {
-  /* 主品牌色 - 淡粉渐变体系 */
-  --vp-c-brand-1: #f472b6;        /* 主粉 */
-  --vp-c-brand-2: #f9a8d4;        /* 浅粉 */
-  --vp-c-brand-3: #fbcfe8;        /* 极浅粉 */
-  --vp-c-brand-soft: #fdf2f8;     /* 粉底背景 */
+  --vp-c-brand-1: #f9a8d4;          /* 主品牌色：淡粉 */
+  --vp-c-brand-2: #f472b6;          /* 深一档 */
+  --vp-c-brand-3: #ec4899;          /* 最深 */
+  --vp-c-brand-soft: rgba(249, 168, 212, 0.18);
+  --vp-c-brand-soft-bg: rgba(249, 168, 212, 0.08);
 
-  /* Hero 大标题渐变 */
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(135deg, #f472b6, #c084fc, #818cf8);
-
-  /* 全局字体 */
-  --vp-font-family-base: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --vp-font-family-base: 'PingFang SC', 'Microsoft YaHei', 'Inter', sans-serif;
   --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  /* 背景微调为暖白 */
-  --vp-c-bg: #fff7fb;
-  --vp-c-bg-alt: #fdf2f8;
-  --vp-c-bg-soft: #fce7f3;
-
-  /* 分割线 */
-  --vp-c-divider: rgba(244, 114, 182, 0.15);
-
-  /* 卡片阴影 */
-  --vp-shadow-1: 0 1px 3px rgba(244, 114, 182, 0.08);
-  --vp-shadow-2: 0 4px 12px rgba(244, 114, 182, 0.12);
-  --vp-shadow-3: 0 8px 30px rgba(244, 114, 182, 0.15);
+  /* 链接颜色 */
+  --vp-c-text-link: #ec4899;
 }
 
-/* ---------- 2. 暗色模式 ---------- */
+/* 暗色模式 */
 .dark {
-  --vp-c-brand-1: #f472b6;
-  --vp-c-brand-2: #ec4899;
-  --vp-c-brand-3: #be185d;
-  --vp-c-brand-soft: #3b0a1a;
-
-  --vp-c-bg: #1a0a14;
-  --vp-c-bg-alt: #1f0d18;
-  --vp-c-bg-soft: #2a1020;
-
-  --vp-c-divider: rgba(244, 114, 182, 0.2);
-
-  --vp-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --vp-shadow-2: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --vp-shadow-3: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --vp-c-brand-1: #f9a8d4;
+  --vp-c-brand-2: #f472b6;
+  --vp-c-brand-3: #ec4899;
+  --vp-c-brand-soft: rgba(249, 168, 212, 0.22);
+  --vp-c-bg: #1a1620;
+  --vp-c-bg-alt: #221b2a;
+  --vp-c-bg-soft: #2a2035;
+  --vp-c-text-link: #f9a8d4;
 }
 
-/* ---------- 3. 顶部导航栏 - 毛玻璃 ---------- */
+
+/* ========================================
+   1. 顶部导航栏 — 毛玻璃
+   ======================================== */
 .VPNavBar {
-  background-color: rgba(255, 247, 251, 0.72) !important;
-  backdrop-filter: saturate(180%) blur(16px);
-  -webkit-backdrop-filter: saturate(180%) blur(16px);
-  border-bottom: 1px solid rgba(244, 114, 182, 0.12);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.55) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(249, 168, 212, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 滚动后加深 */
+.VPNavBar:not(.top) {
+  background-color: rgba(255, 255, 255, 0.78) !important;
+  box-shadow: 0 2px 16px rgba(236, 72, 153, 0.08);
 }
 
 .dark .VPNavBar {
-  background-color: rgba(26, 10, 20, 0.72) !important;
-  border-bottom: 1px solid rgba(244, 114, 182, 0.15);
+  background-color: rgba(26, 22, 32, 0.6) !important;
+  border-bottom: 1px solid rgba(244, 114, 182, 0.25);
+}
+.dark .VPNavBar:not(.top) {
+  background-color: rgba(26, 22, 32, 0.85) !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* 滚动后导航栏加深 */
-.VPNavBar.has-sidebar.scrolled {
-  background-color: rgba(255, 247, 251, 0.85) !important;
-}
 
-.dark .VPNavBar.has-sidebar.scrolled {
-  background-color: rgba(26, 10, 20, 0.85) !important;
-}
-
-/* ---------- 4. 侧边栏 - 毛玻璃 ---------- */
+/* ========================================
+   2. 侧边栏 — 毛玻璃
+   ======================================== */
 .VPSidebar {
-  background-color: rgba(253, 242, 248, 0.6) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-right: 1px solid rgba(244, 114, 182, 0.1);
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(160%);
+  border-right: 1px solid rgba(249, 168, 212, 0.2);
 }
-
 .dark .VPSidebar {
-  background-color: rgba(31, 13, 24, 0.6) !important;
-  border-right: 1px solid rgba(244, 114, 182, 0.12);
+  background-color: rgba(26, 22, 32, 0.55) !important;
+  border-right: 1px solid rgba(244, 114, 182, 0.2);
 }
 
 /* 侧边栏分组标题 */
 .VPSidebarItem.level-0 .text {
-  color: var(--vp-c-brand-1);
-  font-weight: 600;
+  color: var(--vp-c-brand-3);
+  font-weight: 700;
 }
 
-/* ---------- 5. 内容区域卡片化 ---------- */
-.VPDoc .content-container {
-  max-width: 760px;
+
+/* ========================================
+   3. 左上角头像变圆
+   ======================================== */
+.VPNavBar .VPNavBarTitle .logo img,
+.VPNavBar img.logo,
+.VPNavBar .VPImage.logo {
+  border-radius: 50% !important;
+  width: 30px !important;
+  height: 30px !important;
+  border: 2px solid rgba(249, 168, 212, 0.6);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.VPNavBar .VPNavBarTitle .logo img:hover {
+  transform: scale(1.1);
+  border-color: var(--vp-c-brand-3);
 }
 
-/* 代码块毛玻璃 */
-.VPDoc :is(pre, .language-) {
-  border-radius: 12px;
-  border: 1px solid rgba(244, 114, 182, 0.12);
-  box-shadow: var(--vp-shadow-1);
-}
 
-/* 行内代码 */
-.VPDoc :not(pre) > code {
-  background-color: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
-  border-radius: 4px;
-  padding: 2px 6px;
-}
-
-/* ---------- 6. 首页 Hero ---------- */
+/* ========================================
+   4. 首页 Hero — 粉色渐变标题
+   ======================================== */
 .VPHero .name {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  letter-spacing: -0.02em;
+  background: -webkit-linear-gradient(120deg, #f9a8d4, #c084fc, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: heroGradient 6s ease infinite;
+}
+@keyframes heroGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
 }
 
 .VPHero .text {
-  color: var(--vp-c-text-1);
+  color: var(--vp-c-brand-3);
 }
 
 .VPHero .tagline {
-  color: var(--vp-c-text-2);
-  font-size: 1.2rem;
+  color: rgba(100, 100, 100, 0.85);
+}
+.dark .VPHero .tagline {
+  color: rgba(200, 200, 200, 0.7);
 }
 
-/* Hero 按钮 */
-.VPHero .action .VPButton.brand {
-  background: linear-gradient(135deg, #f472b6, #c084fc);
-  border: none;
-  color: white;
-  font-weight: 600;
-  border-radius: 10px;
-  padding: 0 20px;
-  height: 44px;
-  line-height: 44px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 14px rgba(244, 114, 182, 0.35);
-}
 
-.VPHero .action .VPButton.brand:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(244, 114, 182, 0.45);
-}
-
-.VPHero .action .VPButton.alt {
-  border: 1px solid rgba(244, 114, 182, 0.3);
-  color: var(--vp-c-brand-1);
-  border-radius: 10px;
-  padding: 0 20px;
-  height: 44px;
-  line-height: 44px;
-  transition: all 0.2s ease;
-}
-
-.VPHero .action .VPButton.alt:hover {
-  background-color: var(--vp-c-brand-soft);
-  border-color: var(--vp-c-brand-1);
-}
-
-/* ---------- 7. Features 卡片 ---------- */
-.VPFeatures {
-  margin-top: 48px;
-}
-
+/* ========================================
+   5. 首页 Feature 卡片 — 毛玻璃 + 悬浮
+   ======================================== */
 .VPFeatures .container .items {
   gap: 20px;
 }
 
 .VPFeatures .item {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(249, 168, 212, 0.08) !important;
+  border: 1px solid rgba(249, 168, 212, 0.3) !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(244, 114, 182, 0.12);
-  border-radius: 16px;
-  padding: 24px;
+  backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
-.dark .VPFeatures .item {
-  background: rgba(42, 16, 32, 0.6);
-  border: 1px solid rgba(244, 114, 182, 0.15);
-}
-
 .VPFeatures .item:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 36px rgba(244, 114, 182, 0.18);
-  border-color: rgba(244, 114, 182, 0.3);
+  box-shadow: 0 12px 36px rgba(236, 72, 153, 0.18);
+  border-color: rgba(244, 114, 182, 0.55) !important;
 }
 
 .VPFeatures .item .title {
-  color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-3) !important;
   font-weight: 700;
-  font-size: 1.1rem;
 }
 
-.VPFeatures .item .details {
-  color: var(--vp-c-text-2);
-  line-height: 1.6;
+.dark .VPFeatures .item {
+  background: rgba(244, 114, 182, 0.06) !important;
 }
 
-/* Feature 图标容器 */
-.VPFeatures .item .icon {
-  font-size: 2rem;
-  margin-bottom: 12px;
-}
 
-/* ---------- 8. 表格美化 ---------- */
-.VPDoc table {
-  border-radius: 10px;
-  overflow: hidden;
-  border-collapse: separate;
-  border-spacing: 0;
-  border: 1px solid rgba(244, 114, 182, 0.15);
-}
-
-.VPDoc th {
-  background-color: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
+/* ========================================
+   6. 按钮美化
+   ======================================== */
+.VPButton.brand {
+  background: linear-gradient(135deg, #f9a8d4, #c084fc) !important;
+  border: none !important;
+  color: #fff !important;
   font-weight: 600;
+  border-radius: 10px !important;
+  padding: 0 20px !important;
+  height: 40px;
+  line-height: 40px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.VPButton.brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.35);
 }
 
-.VPDoc tr:nth-child(even) {
-  background-color: rgba(253, 242, 248, 0.5);
+.VPButton.alt {
+  border: 1px solid rgba(249, 168, 212, 0.6) !important;
+  color: var(--vp-c-brand-3) !important;
+  border-radius: 10px !important;
+  transition: background 0.2s ease;
+}
+.VPButton.alt:hover {
+  background: rgba(249, 168, 212, 0.12) !important;
 }
 
-.dark .VPDoc tr:nth-child(even) {
-  background-color: rgba(42, 16, 32, 0.5);
-}
 
-/* ---------- 9. 链接颜色 ---------- */
-.VPDoc a {
-  color: var(--vp-c-brand-1);
+/* ========================================
+   7. 链接颜色
+   ======================================== */
+.vp-doc a {
+  color: var(--vp-c-text-link);
   text-decoration: none;
-  border-bottom: 1px dashed transparent;
+  border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease;
 }
-
-.VPDoc a:hover {
-  border-bottom-color: var(--vp-c-brand-1);
+.vp-doc a:hover {
+  border-bottom-color: var(--vp-c-brand-3);
 }
 
-/* ---------- 10. 页脚毛玻璃 ---------- */
-.VPFooter {
-  background-color: rgba(253, 242, 248, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(244, 114, 182, 0.1);
+
+/* ========================================
+   8. 代码块美化
+   ======================================== */
+.vp-doc div[class*="language-"] {
+  border-radius: 12px;
+  border: 1px solid rgba(249, 168, 212, 0.25);
+  overflow: hidden;
+}
+.vp-doc div[class*="language-"] code {
+  font-family: var(--vp-font-family-mono);
 }
 
-.dark .VPFooter {
-  background-color: rgba(26, 10, 20, 0.5);
-  border-top: 1px solid rgba(244, 114, 182, 0.12);
+/* 行内代码 */
+.vp-doc :not(pre) > code {
+  background: rgba(249, 168, 212, 0.15);
+  color: var(--vp-c-brand-3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
 }
 
-/* ---------- 11. 滚动条美化 ---------- */
+
+/* ========================================
+   9. 滚动条美化
+   ======================================== */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: rgba(244, 114, 182, 0.25);
+  background: rgba(249, 168, 212, 0.5);
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(244, 114, 182, 0.45);
+  background: rgba(244, 114, 182, 0.7);
 }
 
-/* ---------- 12. 选中文字高亮 ---------- */
-::selection {
-  background: rgba(244, 114, 182, 0.25);
-  color: inherit;
+
+/* ========================================
+   10. 内容区标题渐变
+   ======================================== */
+.vp-doc h1 {
+  background: -webkit-linear-gradient(120deg, #f9a8d4, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.vp-doc h2 {
+  border-top: none;
+  padding-top: 24px;
+  color: var(--vp-c-brand-3);
+  border-bottom: 2px solid rgba(249, 168, 212, 0.2);
+  padding-bottom: 8px;
 }
 
-/* ---------- 13. 搜索框美化 ---------- */
-.VPNavBarSearch .DocSearch-Button {
-  border-radius: 8px;
-  border: 1px solid rgba(244, 114, 182, 0.15);
-  background: rgba(255, 255, 255, 0.5);
-  transition: all 0.2s ease;
+
+/* ========================================
+   11. 搜索框美化
+   ======================================== */
+.DocSearch-Button {
+  border-radius: 10px !important;
+  border: 1px solid rgba(249, 168, 212, 0.3) !important;
+  background: rgba(249, 168, 212, 0.06) !important;
 }
 
-.VPNavBarSearch .DocSearch-Button:hover {
-  border-color: var(--vp-c-brand-1);
-  background: rgba(255, 255, 255, 0.8);
+
+/* ========================================
+   12. 页脚
+   ======================================== */
+.VPFooter {
+  border-top: 1px solid rgba(249, 168, 212, 0.2);
+  background: rgba(249, 168, 212, 0.03);
 }
+
