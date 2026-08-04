@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'wiki'
 
 export default defineConfig({
   title: "maoxinhe 的 Wiki",
