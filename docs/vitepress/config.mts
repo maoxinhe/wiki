@@ -1,42 +1,39 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "我的文档站",
-  description: "基于 VitePress + Cloudflare Pages 搭建的文档站",
-  lang: "zh-CN",
+  title: 'maoxinhe 的 Wiki',
+  description: '个人知识库',
+  lang: 'zh-CN',
 
-  lastUpdated: true,
+  // 关闭 VitePress 默认主题里的无用东西
+  lastUpdated: false,
   cleanUrls: true,
 
   themeConfig: {
+    logo: '', // 有图再填
+    siteTitle: 'maoxinhe',
+
     nav: [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/getting-started' },
+      { text: '文章', link: '/posts/' },
     ],
 
     sidebar: {
-      '/guide/': [
+      '/posts/': [
         {
-          text: '快速开始',
-          items: [
-            { text: '介绍', link: '/guide/getting-started' },
-            { text: '部署到 Cloudflare', link: '/guide/deployment' },
-          ]
+          text: '文章',
+          items: []
         }
       ]
     },
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/maoxinhe' }
-    ],
-
     footer: {
-      message: '基于 VitePress 构建',
-      copyright: 'Copyright © 2026 maoxinhe'
+      message: 'Released under MIT License.',
+      copyright: '© 2026 maoxinhe'
     },
 
-    search: {
-      provider: 'local'
-    }
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/maoxinhe' }
+    ]
   }
 })
