@@ -1,18 +1,14 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'maoxinhe 的 Wiki',
-  description: '个人知识库',
-  lang: 'zh-CN',
+  title: "maoxinhe 的 Wiki",
+  description: "个人知识库 / 技术笔记",
+  lang: "zh-CN",
 
-  // 关闭 VitePress 默认主题里的无用东西
   lastUpdated: false,
   cleanUrls: true,
 
   themeConfig: {
-    logo: '', // 有图再填
-    siteTitle: 'maoxinhe',
-
     nav: [
       { text: '首页', link: '/' },
       { text: '文章', link: '/posts/' },
@@ -21,19 +17,23 @@ export default defineConfig({
     sidebar: {
       '/posts/': [
         {
-          text: '文章',
+          text: '文章列表',
           items: []
         }
       ]
     },
 
-    footer: {
-      message: 'Released under MIT License.',
-      copyright: '© 2026 maoxinhe'
-    },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/maoxinhe' }
-    ]
+    ],
+
+    footer: {
+      message: '基于 mzy 构建',
+      copyright: 'Copyright © 2026 maoxinhe'
+    },
+
+    search: {
+      provider: 'local'
+    }
   }
 })
