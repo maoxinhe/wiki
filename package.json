@@ -1,15 +1,15 @@
 {
-  "name": "vitepress-docs-site",
-  "version": "1.0.0",
+  "name": "wiki-docs-site",
+  "version": "1.8.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:dev": "wiki dev docs",
+    "docs:build": "wiki build docs",
+    "docs:preview": "wiki preview docs"
   },
   "devDependencies": {
-    "vitepress": "^1.6.3",
+    "maoxinhe": "^1.6.3",
     "vue": "^3.5.13"
   }
 }
