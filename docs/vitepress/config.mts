@@ -1,5 +1,3 @@
-import { defineConfig } from 'wiki'
-
 export default defineConfig({
   title: "maoxinhe 的 Wiki",
   description: "个人知识库 / 技术笔记",
@@ -9,6 +7,8 @@ export default defineConfig({
   cleanUrls: true,
 
   themeConfig: {
+    siteTitle: "wiki",      // ← 加上这一行，左上角显示为 maoxinhe
+
     nav: [
       { text: '首页', link: '/' },
       { text: '文章', link: '/posts/' },
